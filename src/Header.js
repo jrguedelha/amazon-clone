@@ -17,11 +17,34 @@ function Header() {
                 <SearchIcon  className="header__searchIcon" />
             </div>
 
-	    <div className="header__nav">
-	    	<div className="header__option">
-	    	</div>
-	    </div>
+			<div className="header__nav">
+				
+				<div className="header__option">
+					<span className="header__optionLineOne">Olá"</span>
+					<span className="header__optionLineTwo">Fazer Login"</span>
+				</div>
+
+				<div className="header__option">
+					<span className="header__optionLineOne">Voltar</span>
+					<span className="header__optionLineTwo">& Carrinho</span>
+				</div>
+
+				<div className="header__option">
+					<span className="header__optionLineOne">Você</span>
+					<span className="header__optionLineTwo">Prime</span>
+				</div>
+
+				<div className="header_optionBasket">
+					<ShoppingBasketIcon />
+					<span className"header__optionLineTwo header__basketCount">
+						0
+					</span>
+				</div>
+
+			</div>
 
         </div>
-    )
+    );
 }
+
+export default Header;
