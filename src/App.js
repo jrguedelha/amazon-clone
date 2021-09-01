@@ -21,13 +21,13 @@ function App() {
 
         dispatch({
           type: "SET_USER",
-          user: authUser,
+          user: authUser
         });
       } else {
         // the user is logged out
         dispatch({
           type: "SET_USER",
-          user: null,
+          user: null
         });
       }
     });
