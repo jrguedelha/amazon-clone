@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Home";
+import "./App.css";
 import Header from "./Header";
+import Home from "./Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import { auth } from "./firebase";
-import './App.css';
-
+import { useStateValue } from "./StateProvider";
 
 function App() {
+  const [{}, dispatch] = useStateValue();
 
   useEffect(() => {
     // will only run once when the app component loads...
@@ -20,14 +21,13 @@ function App() {
 
         dispatch({
           type: "SET_USER",
-          user: authUser
+          user: authUser,
         });
-      }
-      else {
+      } else {
         // the user is logged out
         dispatch({
           type: "SET_USER",
-          user: null
+          user: null,
         });
       }
     });
